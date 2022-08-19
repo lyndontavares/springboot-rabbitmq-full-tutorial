@@ -42,37 +42,36 @@ A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando us
 ## Configuração
 
 ```java
+// Criar fila
+@Bean
+public Queue queue() {
+	...
+}
 
-	// Criar fila
-	@Bean
-	public Queue queue() {
-		...
-	}
+// Instância do rabbitMQ
+@Bean
+public RabbitAdmin rabbitAdmin(ConnectionFactory connection) {
+	...
+}
 
-	// Instância do rabbitMQ
-	@Bean
-	public RabbitAdmin rabbitAdmin(ConnectionFactory connection) {
-	   ...
-	}
+// Inicializa rabbit
+@Bean
+public ApplicationListener<ApplicationReadyEvent> applicationListener(RabbitAdmin rabbittAdmin) {
+	...
+}
 
-	// Inicializa rabbit
-	@Bean
-	public ApplicationListener<ApplicationReadyEvent> applicationListener(RabbitAdmin rabbittAdmin) {
-		...
-	}
+// Mapper serializção/deserialização
+@Bean
+public Jackson2JsonMessageConverter messageConverter() {
+	...
+}
 
-	// Mapper serializção/deserialização
-	@Bean
-	public Jackson2JsonMessageConverter messageConverter() {
-		...
-	}
-
-	// Manipular filas
-	@Bean
-	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
-			Jackson2JsonMessageConverter messageConverter) {
-      ...
-	}
+// Manipular filas
+@Bean
+public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
+		Jackson2JsonMessageConverter messageConverter) {
+	...
+}
 ```
 
 ## Teste
