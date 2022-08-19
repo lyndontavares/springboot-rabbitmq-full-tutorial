@@ -39,7 +39,7 @@ A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando us
 
 ![](../assets/rabbit-login.png)
 
-## RabbitMQConfig.java
+## Configuração
 
 ```java
 
@@ -73,4 +73,23 @@ A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando us
 			Jackson2JsonMessageConverter messageConverter) {
       ...
 	}
+```
+
+## Teste
+
+### Postman
+
+![](../assets/postman.PNG)
+
+### Curl
+
+```json
+curl --location --request POST 'http://localhost:8080/v1/orders' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 1,
+    "value": 10,
+    "paid": true,
+    "data": "2022-08-19 12:00:03"
+}'
 ```
