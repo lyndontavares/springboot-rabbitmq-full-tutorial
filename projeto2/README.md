@@ -1,6 +1,6 @@
 # Projeto 2
 
-Nsste projeto mosta a cinfiguração de envio e recebimento de mensagems. Utilizaremos o projeto 1 como base.
+Nsste projeto mosta a configuração de envio e recebimento de mensagems. Utilizaremos o projeto 1 como base.
 
 ## Configuração
 
