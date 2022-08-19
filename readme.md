@@ -1,6 +1,6 @@
 # Tutorial RabbitMQ
 
-Tutorial de utilização do RabbitMQ. Tomei como ponto de partida, vários posts no site medium. Porém co o tempo, vi que seria necessário organizar melhor meus apontamentos.
+Tutorial de utilização do RabbitMQ. Tomei como ponto de partida, vários posts no site medium. Organizei meus apontamentos neste git.
 
 ## Conceitos
 
@@ -24,7 +24,6 @@ Uma aplicação publica uma mensagem para o Rabbit. Essa mensagem então é envi
 
 | https://dev.to/mviegas/pt-br-introducao-ao-rabbitmq-com-net-core-15oc
 
-
 ### Exchange
 
 Exchange é um artefato de roteamento que funciona como um carteiro responsável por entregar as mensagens. Quando uma mensagem é publicada numa exchange, é enviada uma propriedade (setada por quem envia) chamada routing key. Essa key funciona como o endereço do destinatário. A exchange olha a key e sabe para onde entregar.
@@ -46,6 +45,8 @@ Recebem as mensagens da exchange e armazenam até que um consumidor se conecte p
 
 ### Binds (associações)
 Para que uma exchange entregue uma mensagem para uma fila, deve haver uma associação, um bind entre elas. Isso pode ser feito de maneira programática por quem envia ou através de uma interface web que o RabbitMQ disponibiliza para gerenciamento do broker.
+
+
 
 ## Aviso
 
