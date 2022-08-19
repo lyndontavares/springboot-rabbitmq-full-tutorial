@@ -6,8 +6,10 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class Order {
 	private Long id;
 	private BigDecimal value = BigDecimal.ZERO;

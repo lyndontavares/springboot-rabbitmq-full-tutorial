@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.mycompany.springbootrabbitinit.consts.Filas;
 
 @Configuration
 public class RabbitMQConfig {
@@ -20,7 +21,7 @@ public class RabbitMQConfig {
 	// Criar fila
 	@Bean
 	public Queue queue() {
-		return new Queue("order");
+		return new Queue(Filas.FILA_ORDER);
 	}
 
 	// Instância do rabbitMQ

@@ -5,37 +5,12 @@ Nsste projeto mosta a cinfiguração de envio e recebimento de mensagems. Utiliz
 ## Configuração
 
 ```java
-
-	// Criar fila
-	@Bean
-	public Queue queue() {
-		...
-	}
-
-	// Instância do rabbitMQ
-	@Bean
-	public RabbitAdmin rabbitAdmin(ConnectionFactory connection) {
-	   ...
-	}
-
-	// Inicializa rabbit
-	@Bean
-	public ApplicationListener<ApplicationReadyEvent> applicationListener(RabbitAdmin rabbittAdmin) {
-		...
-	}
-
-	// Mapper serializção/deserialização
-	@Bean
-	public Jackson2JsonMessageConverter messageConverter() {
-		...
-	}
-
-	// Manipular filas
-	@Bean
-	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
-			Jackson2JsonMessageConverter messageConverter) {
-      ...
-	}
+// Configura consumidor
+@Bean
+public RabbitListenerContainerFactory<DirectMessageListenerContainer> rabbitListenerContainerFactory(
+		ConnectionFactory connectionFactory) {
+	...
+}
 ```
 
 ## Teste

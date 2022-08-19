@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycompany.springbootrabbitinit.consts.Filas;
 import com.mycompany.springbootrabbitinit.dto.Order;
 
 @RestController
@@ -18,7 +19,7 @@ public class OrderController {
 	
 	@PostMapping
 	public Order create(@RequestBody Order order) {
-	 	rabbitTemplate.convertAndSend("order", order);
+	 	rabbitTemplate.convertAndSend(Filas.FILA_ORDER, order);
 		return order;
 	}
  
