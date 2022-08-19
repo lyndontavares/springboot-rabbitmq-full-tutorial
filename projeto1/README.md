@@ -24,8 +24,7 @@ mvn spring-boot:run
 
 Configuração do rabbitmq com o sprintboot:
 
-### Applicatioin.yml
-
+| Applicatioin.yml
 
 ```yml
 spring:
