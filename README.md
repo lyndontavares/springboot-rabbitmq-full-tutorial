@@ -8,7 +8,7 @@ Tutorial de utilização do RabbitMQ. Tomei como ponto de partida, vários posts
 
 Os message brokers são uma tecnologia de comunicação entre aplicativos que ajuda a criar um mecanismo de integração comum para suportar arquiteturas de cloud híbrida, sem servidor e com base em microsserviços.
 
-| https://www.ibm.com/br-pt/cloud/learn/message-brokers
+| <https://www.ibm.com/br-pt/cloud/learn/message-brokers>
 
 ### RabbitMQ
 
@@ -22,7 +22,7 @@ Uma aplicação publica uma mensagem para o Rabbit. Essa mensagem então é envi
 
 ![](assets/rabbit.png)
 
-| https://dev.to/mviegas/pt-br-introducao-ao-rabbitmq-com-net-core-15oc
+| <https://dev.to/mviegas/pt-br-introducao-ao-rabbitmq-com-net-core-15oc>
 
 ### Exchange
 
@@ -30,7 +30,7 @@ Exchange é um artefato de roteamento que funciona como um carteiro responsável
 
 * Direct: a mensagem é enviada para uma fila com o mesmo nome da routing key. Se a routing key não for informada, ela é enviada para uma fila padrão.
 
-<img src="./assets/direct.png" width="400">
+<img src="assets/direct.png" width="400">
 ![](assets/direct.png \| width=400)
 
 * Fanout: a mensagem é distribuída para todas as filas associadas. Esse tipo de exchange ignora a routing key.
@@ -44,6 +44,7 @@ Exchange é um artefato de roteamento que funciona como um carteiro responsável
 * Header: a mensagem é distribuída de acordo com seus cabeçalhos. Dessa forma, é feito um match com qual consumidor deve receber aquela mensagem.
 
 ### Queues (filas)
+
 Recebem as mensagens da exchange e armazenam até que um consumidor se conecte para retirar as mensagens de lá. O nome sugere, isso é feito seguindo uma lógica FIFO (first-in, first-out). Podem ter os seguintes atributos:
 
 * Durable: a fila sobrevive ao restart do message broker. O RabbitMQ possui um banco de dados chamado Mnesia aonde armazena essas informações.
@@ -51,9 +52,8 @@ Recebem as mensagens da exchange e armazenam até que um consumidor se conecte p
 * Autodelete: morre quando não há mais mensagens.
 
 ### Binds (associações)
+
 Para que uma exchange entregue uma mensagem para uma fila, deve haver uma associação, um bind entre elas. Isso pode ser feito de maneira programática por quem envia ou através de uma interface web que o RabbitMQ disponibiliza para gerenciamento do broker.
-
-
 
 ## Aviso
 
