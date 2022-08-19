@@ -20,9 +20,12 @@ docker-compose up -d
 mvn spring-boot:run
 ```
 
+## Configuração
+
 Configuração do rabbitmq com o sprintboot:
 
-## Applicatioin.yml
+### Applicatioin.yml
+
 
 ```yml
 spring:
