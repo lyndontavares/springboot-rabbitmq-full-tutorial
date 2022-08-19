@@ -83,7 +83,7 @@ A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando us
 
 ### Curl
 
-```json
+```bash
 curl --location --request POST 'http://localhost:8080/v1/orders' \
 --header 'Content-Type: application/json' \
 --data-raw '{
