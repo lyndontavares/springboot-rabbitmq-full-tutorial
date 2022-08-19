@@ -30,9 +30,15 @@ Exchange é um artefato de roteamento que funciona como um carteiro responsável
 
 * Direct: a mensagem é enviada para uma fila com o mesmo nome da routing key. Se a routing key não for informada, ela é enviada para uma fila padrão.
 
+![](assets/direct.png)
+
 * Fanout: a mensagem é distribuída para todas as filas associadas (falaremos sobre isso mais abaixo). Esse tipo de exchange ignora a routing key.
 
+![](assets/fanout.png)
+
 * Topic: a mensagem é distribuída de acordo com um padrão enviado pela routing key.
+
+![](assets/topic.png)
 
 * Header: a mensagem é distribuída de acordo com seus cabeçalhos. Dessa forma, é feito um match com qual consumidor deve receber aquela mensagem.
 
