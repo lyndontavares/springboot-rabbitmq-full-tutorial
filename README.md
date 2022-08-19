@@ -1,6 +1,6 @@
 # Tutorial RabbitMQ
 
-Tutorial de utilização do RabbitMQ. Tomei como ponto de partida, vários posts no site medium. Organizei meus apontamentos neste git.
+Tutorial de utilização do RabbitMQ.
 
 ## Conceitos
 
