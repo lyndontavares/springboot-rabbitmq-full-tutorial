@@ -1,6 +1,12 @@
 # Projeto 1
 
-Iniciando com RabbitMQ.
+Este projeto mostra configuração mínima para o rabbitMQ. Trata-se um app que expôe uma APi Rest para teste do envio de uma mensagem.
+O exchange será o default (tipo:direct) e a fila será criada com nome 'order'.
+
+São pré-requisitos:
+
+* Docker
+* Client Rest
 
 ## Docker
 
@@ -14,13 +20,9 @@ docker-compose up -d
 mvn spring-boot:run
 ```
 
-## Importante
-
 Configuração do rabbitmq com o sprintboot:
 
-### Applicatioin.yml
-
-A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando usuário e senha conforme configuração abaixo.
+## Applicatioin.yml
 
 ```yml
 spring:
@@ -31,31 +33,39 @@ spring:
     password: 123456
 ```
 
+## Admin RabbitMQ
+
+A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando usuário e senha conforme configuração abaixo.
+
 ![](../assets/rabbit-login.png)
 
-### RabbitMQConfig.java
+## RabbitMQConfig.java
 
 ```java
 
- @Bean
- public Queue queue() {
-     return new Queue("order");
- }
+// Responsável por criar a fila
+@Bean
+public Queue queue() {
+   return new Queue("order");
+}
 
- @Bean
- public RabbitAdmin rabbitAdmin(ConnectionFactory connection) {
-    return new RabbitAdmin(connection);
- }
+// Instância do rabbitMQ
+@Bean
+public RabbitAdmin rabbitAdmin(ConnectionFactory connection) {
+   return new RabbitAdmin(connection);
+}
 
- @Bean
- public ApplicationListener<ApplicationReadyEvent> applicationListener(RabbitAdmin rabbittAdmin) {
-    return event -> rabbittAdmin.initialize();
- }
+// Estabelece conexão e cria fila
+@Bean
+public ApplicationListener<ApplicationReadyEvent> applicationListener(RabbitAdmin rabbittAdmin) {
+   return event -> rabbittAdmin.initialize();
+}
 
- @Bean
- public Jackson2JsonMessageConverter messageConverter() {
-    return new Jackson2JsonMessageConverter();
- }
+// Mapper de serialização
+@Bean
+public Jackson2JsonMessageConverter messageConverter() {
+   return new Jackson2JsonMessageConverter();
+}
 
 @Bean
 public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
