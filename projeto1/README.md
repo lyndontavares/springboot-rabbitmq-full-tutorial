@@ -37,7 +37,7 @@ spring:
 
 A adminstração do RabbitMQ é feita pela url: http://localhost:5672, usando usuário e senha conforme configuração abaixo.
 
-![](../assets/rabbit-login.png)
+![](../assets/rabbit-exchange.png)
 
 ## Configuração
 
